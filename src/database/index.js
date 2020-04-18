@@ -5,7 +5,8 @@ mongoose.Promise = global.Promise
 
 mongoose.connect( process.env.URL_DATABASE, {
     useNewUrlParser: true, 
-    useCreateIndex: true 
+    useCreateIndex: true,
+    useUnifiedTopology: true 
 } )
 
 module.exports = mongoose
