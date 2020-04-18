@@ -23,11 +23,11 @@ describe( 'USER', () => {
         
         expect( response.body ).toHaveProperty( 'msg', 'Usuário criado com sucesso.' )
         expect( response.body ).toHaveProperty( 'user' )
-        expect( response.body ).toHaveProperty( 'id' )
-        expect( response.body.user.nome ).toHaveProperty( 'nome', 'Jorge Alegretti' )
-        expect( response.body.user.email ).toHaveProperty( 'email', 'jorge@test.com' )
+        expect( response.body.user ).toHaveProperty( '_id' )
+        expect( response.body.user ).toHaveProperty( 'nome', 'Jorge Alegretti' )
+        expect( response.body.user ).toHaveProperty( 'email', 'jorge@test.com' )
 
-        data.user.id = response.body.id
+        data.user.id = response.body.user._id
     } )
 
     it( 'Deve listar os usuários.', async () => {
@@ -45,9 +45,9 @@ describe( 'USER', () => {
         
         expect( response.body ).toHaveProperty( 'msg', 'Usuário deletado com sucesso.' )
         expect( response.body ).toHaveProperty( 'user' )
-        expect( response.body ).toHaveProperty( 'id', data.user.id )
-        expect( response.body.user.nome ).toHaveProperty( 'nome', 'Jorge Alegretti' )
-        expect( response.body.user.email ).toHaveProperty( 'email', 'jorge@test.com' )
+        expect( response.body.user ).toHaveProperty( 'id', data.user.id )
+        expect( response.body.user ).toHaveProperty( 'nome', 'Jorge Alegretti' )
+        expect( response.body.user ).toHaveProperty( 'email', 'jorge@test.com' )
 
     } )
 
