@@ -1,0 +1,81 @@
+DadosBasicos{
+destinos	[
+uniqueItems: false
+string]
+tipoViagem	integer($int32)
+tipoTarifa	integer($int32)
+dataSaida	string($date-time)
+dataRetorno	string($date-time)
+valorCompra	number($double)
+formaPagamento	integer($int32)
+cupom	string
+cnpjAgencia	string
+cpfEmissor	string
+numeroControle	string
+identificacao	string
+identificacao2	string
+nomeContatoBrasil	string
+telefoneContatoBrasil	string
+celularContatoBrasil	string
+valorTotalPacote	number($double)
+CodigoOperacao	integer($int32)
+canalDeVenda	integer($int32)
+}
+
+DadosTitular{
+    codigo	integer($int32)
+    nome	string
+    sobrenome	string
+    sexo	string
+    documento	string
+    tipoDocumento	integer($int32)
+    telefone	string
+    celular	string
+    email	string
+    dataNascimento	string($date-time)
+    endereco	string
+    cep	string
+    numero	string
+    cidade	string
+    bairro	string
+    uf	string
+    complemento	string
+    idade	integer($int32)
+    dataEmissaoDocumento	string($date-time)
+    origemDocumento	string
+    beneficiarios	string
+}
+
+DadosIntegrantes{
+    codigo	integer($int32)
+    nome	string
+    sobrenome	string
+    sexo	string
+    tipoDocumento	integer($int32)
+    documento	string
+    dataNascimento	string($date-time)
+    idade	integer($int32)
+    dataEmissaoDocumento	string($date-time)
+    origemDocumento	string
+    email	string
+    beneficiarios	string
+}
+
+DadosProdutos{
+    codigoProduto	integer($int32)
+    valorProduto	number($double)
+    codigoPeriodoMultiViagem	integer($int32)
+    codigoTarifaAcordo	integer($int32)
+    cambio	number($double)
+}
+
+DadosBeneficiosOpcionais{
+    codigoBeneficio	integer($int32)
+    valorBeneficio	number($double)
+    dadosPassageiro	[
+        uniqueItems: false
+        DadosPassageiroBeneficioOpcional{
+            codigoPassageiro	integer($int32)
+        }
+    ]
+}

@@ -1,9 +1,9 @@
 const mongoose = require( '../database/index.js' )
 
 const UserSchema = new mongoose.Schema( {
-    nome:{ type: String, required: true },
-    email:{ type: String, required: true },
-    senha: { type: String, required: true }
+    nome:{ type: String },
+    email:{ type: String },
+    senha: { type: String },
 } )
 
 const User = mongoose.model( 'User', UserSchema )

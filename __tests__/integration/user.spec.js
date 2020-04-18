@@ -9,7 +9,24 @@ const data = {
         nome: 'Jorge Alegretti',
         email: 'jorge@test.com',
         senha: 'hackathonGr1d'
+    },
+    cotacao:{
+        
+        destinos: [
+          "AU"
+        ],
+        passageiros: [
+          {
+            nome: "Jorge Alegretti",
+            dataNascimento: "1992-04-18T17:27:23.551Z"
+          }
+        ],
+        dataSaida: "2020-04-19T17:27:23.551Z",
+        dataRetorno: "2020-10-18T17:27:23.551Z",
+        tipoViagem: 1,
+        tipoTarifa: 2
     }
+    
 }
 
 describe( 'USER', () => {
@@ -48,6 +65,20 @@ describe( 'USER', () => {
         expect( response.body.user ).toHaveProperty( 'id', data.user.id )
         expect( response.body.user ).toHaveProperty( 'nome', 'Jorge Alegretti' )
         expect( response.body.user ).toHaveProperty( 'email', 'jorge@test.com' )
+
+    } )
+
+} )
+
+describe( 'USER_COTACAO', () => {
+
+    it( 'Deve fazer uma cotação de seguro viagem', async () => {
+
+        const response = await request( app )
+            .post( '/users/cotacao' )
+            .send( data.cotacao )
+
+        expect( response.body ).toHaveProperty( 'msg' )
 
     } )
 
