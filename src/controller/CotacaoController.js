@@ -1,13 +1,5 @@
 const requestApi = require( 'request' )
-
-require( 'dotenv/config' )
-
-const options = {
-    url: process.env.API_URL_TRAVEL_ACE,
-    headers:{
-        'X-Api-Key': process.env.API_KEY_TRAVEL_ACE
-    }
-}
+const options = require( '../API/utils/header.js' )
 
 module.exports = {
 

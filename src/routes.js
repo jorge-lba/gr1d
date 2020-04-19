@@ -2,6 +2,7 @@ const express = require( 'express' )
 
 const UserController = require( './controller/UserController.js' )
 const CotacaoController = require( './controller/CotacaoController.js' )
+const ApiController = require( './controller/ApiController.js' )
 
 const routes = express.Router()
 
@@ -10,5 +11,7 @@ routes.post( '/users', UserController.create )
 routes.delete( `/users/:id`, UserController.delete )
 
 routes.post( '/users/cotacao', CotacaoController.index )
+
+routes.get( '/api/destinos', ApiController.destinos )
 
 module.exports = routes
