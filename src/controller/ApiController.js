@@ -85,6 +85,23 @@ module.exports = {
             response.status( 400 ).json( {error} )
         }
 
+    },
+
+    async tiposTarifa( request, response ){
+
+        try {
+
+            await requestApi.get( options.url + '/tipostarifa', { headers: options.headers }, ( err, res, body ) => {
+
+                const result = JSON.parse( body )
+                response.status( 400 ).json( result )
+
+            } )
+
+        } catch (error) {
+            response.status( 400 ).json( { error } )
+        }
+
     }
 
 }

@@ -25,4 +25,13 @@ describe( "API_DESTINOS", () => {
 
     } )
 
+    it( "Deve retornar os tipos de tarifas", async () => {
+
+        const response = await request( app )
+            .get( '/api/tipostarifa' )
+
+        expect( response.body instanceof Array ).toBe( true )
+
+    } )
+
 } )

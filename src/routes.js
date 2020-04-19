@@ -14,5 +14,6 @@ routes.post( '/users/cotacao', CotacaoController.index )
 
 routes.get( '/api/destinos', ApiController.destinos )
 routes.get( '/api/tipoviagem', ApiController.tipoViagem )
+routes.get( '/api/tipostarifa', ApiController.tiposTarifa )
 
 module.exports = routes
