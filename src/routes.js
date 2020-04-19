@@ -13,5 +13,6 @@ routes.delete( `/users/:id`, UserController.delete )
 routes.post( '/users/cotacao', CotacaoController.index )
 
 routes.get( '/api/destinos', ApiController.destinos )
+routes.get( '/api/tipoviagem', ApiController.tipoViagem )
 
 module.exports = routes

@@ -16,4 +16,13 @@ describe( "API_DESTINOS", () => {
 
     } )
 
+    it( "Dev retornar os tipos de viagens", async () => {
+
+        const response = await request( app )
+            .get( '/api/tipoviagem' )
+
+        expect( response.body instanceof Array ).toBe( true )
+
+    } )
+
 } )
