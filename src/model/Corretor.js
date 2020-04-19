@@ -1,12 +1,13 @@
 const mongoose = require( '../database/index.js' )
 
-const UserSchema = new mongoose.Schema( {
+const CorretorSchema = new mongoose.Schema( {
     nome:{ type: String },
     email:{ type: String },
     telefone:{ type: String },
     senha: { type: String },
+    susep: { type: String }
 } )
 
-const User = mongoose.model( 'User', UserSchema )
+const Corretor = mongoose.model( 'Corretor', CorretorSchema )
 
-module.exports = User
+module.exports = Corretor
